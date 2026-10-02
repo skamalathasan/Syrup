@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Syrup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+
+    <header class="header">
+      <h1>Syrup</h1>
+      <span class="badge" title="Syrup has no servers, no accounts, and stores nothing. Searches go straight from your browser to the stores.">
+        🛡️ No data collected
+      </span>
+    </header>
+
+    <!-- The product we detected on the current page -->
+    <section id="product" class="product" hidden>
+      <p class="label">You're viewing</p>
+      <p id="product-name" class="product-name"></p>
+      <p id="product-price" class="product-price"></p>
+    </section>
+
+    <!-- Loading state -->
+    <section id="loading" class="status" hidden>
+      <div class="spinner" aria-hidden="true"></div>
+      <p id="loading-text">Checking this page…</p>
+    </section>
+
+    <!-- Error state -->
+    <section id="error" class="status error" hidden>
+      <p class="error-title">Couldn't check prices</p>
+      <p id="error-text"></p>
+    </section>
+
+    <!-- Results state -->
+    <section id="results" hidden>
+      <div id="banner" class="banner"></div>
+      <ul id="alternatives" class="alternatives"></ul>
+      <p class="disclaimer">
+        Prices come from store search pages and may not include shipping, tax, or
+        condition. Check the product before you buy.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

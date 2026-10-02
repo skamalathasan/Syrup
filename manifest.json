@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Syrup",
+  "version": "1.0.0",
+  "description": "Find better prices for products you're viewing. No tracking, no accounts, no data collected.",
+
+  "permissions": ["activeTab"],
+
+  "host_permissions": [
+    "https://www.amazon.com/*",
+    "https://www.bestbuy.com/*",
+    "https://www.newegg.com/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Syrup"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.com/*",
+        "https://www.bestbuy.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
